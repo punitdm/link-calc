@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backlinks Worth Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Backlinks Worth Calculator</h1>
+        <div class="form-group">
+            <label for="target-country">Target Country:</label>
+            <select id="target-country" required>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="canada">Canada</option>
+                <option value="australia">Australia</option>
+                <option value="europe">Europe</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="traffic">Monthly Traffic:</label>
+            <input type="number" id="traffic" required>
+        </div>
+        <div class="form-group">
+            <label for="country">Traffic Country:</label>
+            <select id="country" required>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="canada">Canada</option>
+                <option value="australia">Australia</option>
+                <option value="europe">Europe</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="da">Domain Authority (DA):</label>
+            <input type="number" id="da" required>
+        </div>
+        <div class="form-group">
+            <label for="dr">Domain Rating (DR):</label>
+            <input type="number" id="dr" required>
+        </div>
+        <div class="form-group">
+            <label for="spam-score">Spam Score (%):</label>
+            <input type="number" id="spam-score" required>
+        </div>
+        <div class="form-group">
+            <label for="niche">Niche Relevance:</label>
+            <select id="niche" required>
+                <option value="high">Business</option>
+                <option value="high">Health</option>
+                <option value="high">Construction</option>
+                <option value="high">Technology</option>
+                <option value="high">Education</option>
+                <option value="high">Entertainment</option>
+                <option value="low">General</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="keyword-relevance">Traffic Generating Keywords:</label>
+            <select id="keyword-relevance" required>
+                <option value="high">Relevant</option>
+                <option value="medium">Somewhat Relevant</option>
+                <option value="low">Not Relevant</option>
+            </select>
+        </div>
+        <button class="btn" onclick="calculateWorth()">Calculate Worth</button>
+        <div class="result" id="result" style="display: none;">
+            Estimated Backlink Worth: $<span id="worth"></span>
+        </div>
+        <div class="form-group">
+            <label for="help">Pricing Calculation Details:</label>
+            <button class="help-button" onclick="toggleHelp()">?</button>
+            <div class="help-content" id="help-content">
+                <p><strong>Traffic:</strong> Low (<10,000): $10, Medium (10,000-50,000): $20, High (>50,000): $30</p>
+                <p><strong>Country:</strong> USA: +$20, UK: +$20, Canada: +$20, Australia: +$20, Europe: +$10, Others: $0</p>
+                <p><strong>DA/DR:</strong> 0-20: +$0, 21-40: +$10, 41-60: +$20, 61-80: +$30, 81-100: +$40</p>
+                <p><strong>Spam Score:</strong> 0-10%: $0, 11-30%: -$10, >30%: -$20</p>
+                <p><strong>Niche Relevance:</strong> High: +$20, Medium: +$10, Low: $0</p>
+                <p><strong>Keyword Relevance:</strong> Relevant: +$20, Somewhat Relevant: +$10, Not Relevant: -$10</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
